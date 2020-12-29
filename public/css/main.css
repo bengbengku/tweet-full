@@ -5,6 +5,7 @@
   --spacing: 15px;
   --blueL: #9bd1f9;
   --greyText: rgb(101, 119, 134);
+  --greyButton: rgba(0,0,0, 0.34);
 }
 
 * {
@@ -52,6 +53,12 @@ nav a:hover {
   color: var(--warna);
   border-radius: 50%;
   transition: all 0.17s ease-in-out;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--greyButton);
 }
 
 .mainSectionContainer {
@@ -147,3 +154,34 @@ nav a:hover {
 .displayName {
   font-weight: bold;
 }
+
+.postFooter {
+  display: flex;
+  align-items: center;
+}
+
+.postFooter .postButtonContainer {
+   flex: 1;
+   display: flex;
+} 
+
+.postFooter .postButtonContainer button {
+  padding: 7.2px 11px;
+
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header a,
+.header span {
+  padding-right: 5px;
+}
+
+.postButtonContainer button:hover {
+  background-color: #d4edff;
+  border-radius: 50%;
+  color: var(--blueL);
+}
+
