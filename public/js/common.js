@@ -42,6 +42,13 @@ $(document).on("click", ".likeButton", (event) => {
       
       button.find("span").text(postData.likes.length || "");
 
+      if(postData.likes.includes(userLoggedIn._id)) {
+        button.addClass("active");
+      }
+      else {
+        button.removeClass("active");
+      }
+
     },
   });
 });
@@ -66,6 +73,8 @@ function createPostHtml(postData) {
   var displayNama = postedBy.firstName + " " + postedBy.lastName;
   var timestamp = timeDifference(new Date(), new Date(postData.createdAt));
 
+  var likeButtonActiveClass = postData.likes.includes(userLoggedIn._id) ? "active" : "";
+
   return `
         <div class='post' data-id='${postData._id}'>
             <div class="mainContentContainer">
@@ -74,7 +83,9 @@ function createPostHtml(postData) {
                 </div>
                 <div class="postContentContainer">
                     <div class="header">
-                        <a href="/profile/${postedBy.username}" class="displayName">${displayNama}</a>
+                        <a href="/profile/${
+                          postedBy.username
+                        }" class="displayName">${displayNama}</a>
                         <span class="username">@${postedBy.username}</span>
                         <span class="date">${timestamp}</span>
                     </div>
@@ -87,13 +98,13 @@ function createPostHtml(postData) {
                                 <i class="far fa-comments"></i>
                             </button>
                         </div>
-                        <div class="postButtonContainer">
-                            <button>
+                        <div class="postButtonContainer green">
+                            <button class="retweet">
                                 <i class="fas fa-retweet"></i>
                             </button>
                         </div>
-                        <div class="postButtonContainer">
-                            <button class="likeButton">
+                        <div class="postButtonContainer red">
+                            <button class="likeButton ${likeButtonActiveClass}">
                                 <i class="far fa-heart"></i>
                                 <span>${postData.likes.length || ""}</span>
                             </button>
