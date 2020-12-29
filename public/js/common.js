@@ -22,7 +22,7 @@ $("#submitPostButton").click(() => {
         content: textbox.val()
     }
     
-    $.post("/api/post", data, (postData, statu, xhr) => {
-        
+    $.post("/api/posts", data, (postData, status, xhr) => {
+        console.log(postData)
     })
 })
