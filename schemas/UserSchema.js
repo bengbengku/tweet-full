@@ -32,13 +32,14 @@ const userSchema = new Schema(
     },
     profilePic: {
       type: String,
-      default: '/images/profilePic.jpeg',
+      default: "/images/profilePic.jpeg",
     },
+    likes: [{ type: Schema.Types.ObjectId, ref: "Post" }],
   },
   {
     timestamps: true,
   }
-)
+);
 
 var User = mongoose.model('User', userSchema)
 module.exports = User
