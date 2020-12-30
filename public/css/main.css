@@ -223,3 +223,9 @@ button span {
 .postActionContainer span a:hover {
   text-decoration: underline;
 }
+
+.modal .postFormContainer {
+  border: none;
+  padding: 0;
+  padding-top: var(--spacing);
+}
