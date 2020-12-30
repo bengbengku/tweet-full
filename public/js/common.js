@@ -86,7 +86,15 @@ function getPostIdFromElement(element) {
 }
 
 function createPostHtml(postData) {
-  var postedBy = postData.postedBy;
+
+  if(postData == null) return alert("data not found");
+
+  var isRetweet = postData.retweetData !== undefined;
+  var retweetedBy = isRetweet ? postData.postedBy.username : null;
+  postData = isRetweet ? postData.retweetData : postData;
+  console.log(isRetweet);
+
+   var postedBy = postData.postedBy;
 
   if (postedBy._id === undefined) {
     return console.log("user not populated!");
@@ -96,6 +104,7 @@ function createPostHtml(postData) {
   var timestamp = timeDifference(new Date(), new Date(postData.createdAt));
 
   var likeButtonActiveClass = postData.likes.includes(userLoggedIn._id) ? "active" : "";
+  var retweetsButtonActiveClass = postData.retweetUsers.includes(userLoggedIn._id) ? "active" : "";
 
   return `
         <div class='post' data-id='${postData._id}'>
@@ -121,9 +130,11 @@ function createPostHtml(postData) {
                             </button>
                         </div>
                         <div class="postButtonContainer green">
-                            <button class="retweetButton">
+                            <button class="retweetButton ${retweetsButtonActiveClass}">
                                 <i class="fas fa-retweet"></i>
-                                <span>${postData.retweetUsers.length || ""}</span>
+                                <span>${
+                                  postData.retweetUsers.length || ""
+                                }</span>
                             </button>
                         </div>
                         <div class="postButtonContainer red">
