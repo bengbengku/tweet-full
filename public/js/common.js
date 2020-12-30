@@ -173,9 +173,12 @@ function createPostHtml(postData) {
 
     replyFlag = `
       <div class='replyFlag'>
+        <span>
+          <i class="fas fa-comment-alt"></i>
+        </span>
         Replying to <a href="/profile/${replyToUsername}">@${replyToUsername}</a>
       </div>
-    `
+    `;
 
   }
 

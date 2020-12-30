@@ -244,7 +244,13 @@ button span {
   margin-bottom: 5px;
 }
 
-.replyFlag a {
+.replyFlag span {
+  color:rgba(91, 112, 131, 0.609);
+  padding: 0;
+  font-size: 18px;
+}
+
+rgb(91,112,131) {
   color: var(--warna);
 }
 
