@@ -211,3 +211,15 @@ button span {
   color: var(--green);
   background-color: var(--greenBg);
 }
+
+.postActionContainer {
+  padding-left: 45px;
+  font-size: 13px;
+  color: var(--greyText);
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.postActionContainer span a:hover {
+  text-decoration: underline;
+}
