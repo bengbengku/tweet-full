@@ -234,3 +234,15 @@ button span {
   padding: 0;
   padding-bottom: var(--spacing);
 }
+
+.replyFlag {
+  margin-bottom: 5px;
+}
+
+.replyFlag a {
+  color: var(--warna);
+}
+
+.replyFlag a:hover {
+  text-decoration: underline;
+}

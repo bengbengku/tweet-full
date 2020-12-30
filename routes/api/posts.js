@@ -4,7 +4,6 @@ const app = express();
 const router = express.Router();
 const User = require("../../schemas/UserSchema");
 const Post = require("../../schemas/PostSchema");
-const { populate } = require("../../schemas/UserSchema");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -143,9 +142,11 @@ async function getPosts(filter) {
   var results = await Post.find(filter)
     .populate("postedBy")
     .populate("retweetData")
+    .populate("replyTo")
     .sort({ createdAt: -1 })
     .catch(error => console.log(error))
 
+    results = User.populate(results, { path: "replyTo.postedBy" });
     return await User.populate(results, { path: "retweetData.postedBy" });
     
 }
