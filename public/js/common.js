@@ -15,32 +15,44 @@ $("#postTextArea, #replyTextArea").keyup((event) => {
   submitButton.prop("disabled", false);
 });
 
-$("#submitPostButton").click(() => {
+$("#submitPostButton, #submitReplyButton").click(() => {
   var button = $(event.target);
-  var textbox = $("#postTextArea");
+
+  var isModal = button.parents(".modal").length == 1;
+  var textbox = isModal ? $("#replyTextArea") : $("#postTextArea");
 
   var data = {
     content: textbox.val(),
   };
 
+  if (isModal) {
+    var id = button.data().id;
+    if (id == null) return alert("Button id is null");
+    data.replyTo = id;
+  }
+
   $.post("/api/posts", data, (postData) => {
-    var html = createPostHtml(postData);
-    $(".postContainer").prepend(html);
-    textbox.val("");
-    button.prop("disabled", true);
+    if (postData.replyTo) {
+      location.reload();
+    } else {
+      var html = createPostHtml(postData);
+      $(".postContainer").prepend(html);
+      textbox.val("");
+      button.prop("disabled", true);
+    }
   });
 });
 
-
 $("#replyModal").on("show.bs.modal", (event) => {
-  
   var button = $(event.relatedTarget);
   var postId = getPostIdFromElement(button);
+
+  $("#submitReplyButton").data("id", postId);
 
   $.get("/api/posts/" + postId, (results) => {
     outputPosts(results, $("#originalPostContainer"));
   });
-})
+});
 
 $("#replyModal").on("hidden.bs.modal", () => {
   $("#originalPostContainer").html("");
@@ -211,7 +223,7 @@ function timeDifference(current, previous) {
 function outputPosts(results, container) {
   container.html("");
 
-  if(!Array.isArray(results)) {
+  if (!Array.isArray(results)) {
     results = [results];
   }
 
