@@ -16,10 +16,11 @@ mixin createReplyModal(userLoggedIn)
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                     span(aria-hidden='true') &times;
                 .modal-body
+                    #originalPostContainer
                     .postFormContainer
                         .userImageContainer
                             img(src=userLoggedIn.profilePic, alt="User's profile picture")
                         .textAreaContainer
-                            textarea#postTextArea(placeholder="Apa yang sedang terjadi? ")
+                            textarea#replyTextArea(placeholder="Apa yang sedang terjadi? ")
                 .modal-footer
                     button#submitReplyButton.btn.btn-primary(type='button', disabled="") Reply
