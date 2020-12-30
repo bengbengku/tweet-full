@@ -143,6 +143,11 @@ button span {
   flex-shrink: 0;
 }
 
+.post:hover {
+  background-color: rgba(156, 166, 175, 0.075);
+  transition: all 0.17s ease-in-out;
+}
+
 .mainContentContainer {
   flex: 1;
   display: flex;
