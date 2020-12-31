@@ -19,9 +19,20 @@ router.get("/:id", async (req, res, next) => {
   var postId = req.params.id;
 
 
-  var results = await getPosts({ _id: postId });
-  results = results[0];
-  console.log(results);
+  var postData = await getPosts({ _id: postId });
+
+  postData = postData[0];
+
+  var results = {
+    postData: postData,
+  }
+
+  if(postData.replyTo !== undefined) {
+    results.replyTo = postData.replyTo
+  }
+
+  results.replies = await getPosts({ replyTo: postId })
+
   res.status(200).send(results);
 
 });

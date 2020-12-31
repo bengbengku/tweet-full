@@ -40,7 +40,7 @@ app.use('/register', registerRoute)
 app.use("/posts", postRoute);
 app.use('/logout', logoutRoute)
 
-app.use("/api/posts", postsApiRoute)
+app.use("/api/posts", middleware.requireLogin, postsApiRoute);
 
 app.get('/', middleware.requireLogin, (req, res, next) => {
   var payload = {
