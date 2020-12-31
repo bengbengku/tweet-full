@@ -257,3 +257,8 @@ rgb(91,112,131) {
 .replyFlag a:hover {
   text-decoration: underline;
 }
+
+.post.largeFont .postBody,
+.post.largeFont .postFooter{
+  font-size: 23px;
+}
