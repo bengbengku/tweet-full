@@ -262,3 +262,11 @@ rgb(91,112,131) {
 .post.largeFont .postFooter{
   font-size: 23px;
 }
+
+.postContentContainer .header {
+  display: flex;
+}
+
+.postContentContainer .header .date {
+  flex: 1;
+}
