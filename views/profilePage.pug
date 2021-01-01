@@ -1,0 +1,11 @@
+extends layouts/main-layout.pug
+
+block content
+    span #{profileUser.firstName}
+    .postContainer
+
+    +createPostModals(userLoggedIn)
+
+
+block scripts
+    script(src="/js/profile.js")
