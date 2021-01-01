@@ -2,7 +2,11 @@ extends layouts/main-layout.pug
 
 block content
     if !profileUser
-        span.errorMessage URL access denied
+        .error-page
+            div
+                h1(data-h1="404") 404
+                p(data-p="NOT FOUND") NOT FOUND
+        #profileParticle
     else
         span #{profileUser.firstName}
         .postContainer
@@ -12,3 +16,4 @@ block content
 
 block scripts
     script(src="/js/profile.js")
+    script(src="/js/profileParticle.js")
