@@ -73,7 +73,6 @@ $("#deletePostButton").click((event) => {
     type: "DELETE",
     success: () => {
       location.reload();
-
     },
   });
 })

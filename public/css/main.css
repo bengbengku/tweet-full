@@ -250,8 +250,8 @@ button span {
   font-size: 18px;
 }
 
-rgb(91,112,131) {
-  color: var(--warna);
+.replyFlag a {
+    color: var(--blue);
 }
 
 .replyFlag a:hover {
