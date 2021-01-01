@@ -1,10 +1,13 @@
 extends layouts/main-layout.pug
 
 block content
-    span #{profileUser.firstName}
-    .postContainer
+    if !profileUser
+        span.errorMessage URL access denied
+    else
+        span #{profileUser.firstName}
+        .postContainer
 
-    +createPostModals(userLoggedIn)
+        +createPostModals(userLoggedIn)
 
 
 block scripts
