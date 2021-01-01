@@ -26,7 +26,7 @@ router.get("/:username", async (req, res, next) => {
 async function getPayload(username, userLoggedIn) {
   var user = await User.findOne({ username: username });
 
-  if (username == null) {
+  if (user == null) {
     return {
       pageTitle: "User not found",
       userLoggedIn: userLoggedIn,
