@@ -80,6 +80,16 @@ button span {
     flex-direction: column;
 }
 
+.mainSectionContainer .postsContainer .noResults {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: var(--spacing);
+    color: var(--greyText)
+}
+
 .titleContainer {
     height: 53px;
     padding: 0 var(--spacing);
