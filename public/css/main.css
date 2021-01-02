@@ -58,6 +58,7 @@ nav a:hover {
     background-color: var(--buttonHoverBg);
     color: var(--blue);
     border-radius: 50%;
+    transition: all 0.17s ease-in-out;
 }
 
 button {
@@ -277,7 +278,8 @@ button span {
     min-height: 66px;
 }
 
-.profileButton {
+.profileButton,
+.followButton {
     border: 1px solid var(--blue);
     color: var(--blue);
     font-weight: bold;
@@ -287,10 +289,39 @@ button span {
     margin-left: var(--spacing);
 }
 
-.profileButton:hover {
+.profileButton:hover,
+.followButton:hover {
     background-color: var(--blueBackground);
 }
 
 .postContentContainer .replyFlag a:hover {
     text-decoration: underline;
+}
+
+.followButton.following {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.profileHeaderContainer .userDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing);
+}
+
+.followersContainer .value{
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.followersContainer span:not(.value){
+    color: var(--greyText);
+}
+
+.followersContainer a {
+    margin-right: 15px;
+}
+
+.followersContainer a:hover {
+    border-bottom: 1px solid #000;
 }
