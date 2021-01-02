@@ -1,13 +1,11 @@
 extends layouts/main-layout.pug
 
-block content
+block content    
     script.
         var postId = '!{postId}'
-
-    .postContainer
+    .postsContainer
 
     +createPostModals(userLoggedIn)
-
 
 block scripts
     script(src="/js/postPage.js")

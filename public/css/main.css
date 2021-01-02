@@ -1,401 +1,296 @@
 :root {
-  --warna: #24aadd;
-  --buttonHoverBg: #d4edff;
-  --lightGrey: rgb(230, 236, 240);
-  --spacing: 15px;
-  --blueL: #9bd1f9;
-  --greyText: rgb(101, 119, 134);
-  --greyButton: rgba(0,0,0, 0.34);
-  --red: rgb(226, 34, 94);
-  --redBg: rgba(226, 34, 94, 0.1);
-  --green: rgb(23, 191, 99);
-  --greenBg: rgba(23, 191, 99, 0.1);
+    --blue: #1FA2F1;
+    --blueLight: #9BD1F9;
+    --blueBackground: rgba(212, 237, 255, 0.6);
+    --buttonHoverBg: #d4edff;
+    --lightGrey: rgb(230, 236, 240);
+    --spacing: 15px;
+    --greyText: rgb(101, 119, 134);
+    --greyButtonText: rgba(0,0,0,0.34);
+    --red: rgb(226,34,94);
+    --redBackground: rgba(226,34,94,0.1);
+    --green: rgb(23,191,99);
+    --greenBackground: rgba(23,191,99,0.1);
 }
 
 * {
-  outline: none !important;
+    outline: none !important;
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }
 
 a:hover {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 h1 {
-  font-size: 19px;
-  font-weight: 800;
-  margin: 0;
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
 }
 
 nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
 }
 
 nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  font-size: 30px;
-  padding: 10px;
-  color: #212529;
+    padding: 10px;
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212529;
 }
 
-nav a.warna {
-  color: var(--warna);
+nav a.blue {
+    color: var(--blue);
 }
 
 nav a:hover {
-  background-color: var(--buttonHoverBg);
-  color: var(--warna);
-  border-radius: 50%;
-  transition: all 0.17s ease-in-out;
+    background-color: var(--buttonHoverBg);
+    color: var(--blue);
+    border-radius: 50%;
 }
 
 button {
-  background-color: transparent;
-  border: none;
-  color: var(--greyButton);
+    background-color: transparent;
+    border: none;
+    color: var(--greyButtonText);
 }
 
 button i,
 button span {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .mainSectionContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  border-left: 1px solid var(--lightGrey);
-  border-right: 1px solid var(--lightGrey);
+    padding:  0;
+    border-left: 1px solid var(--lightGrey);
+    border-right: 1px solid var(--lightGrey);
+    display: flex;
+    flex-direction: column;
 }
 
 .titleContainer {
-  display: flex;
-  align-items: center;
-  height: 53px;
-  border-bottom: 1px solid var(--lightGrey);
-  padding: 0 var(--spacing);
-  flex-shrink: 0;
+    height: 53px;
+    padding: 0 var(--spacing);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
 }
 
 .titleContainer h1 {
-  flex: 1;
+    flex: 1;
 }
 
 .postFormContainer {
-  display: flex;
-  padding: var(--spacing);
-  border-bottom: 10px solid var(--lightGrey);
-  flex-shrink: 0;
+    display: flex;
+    padding: var(--spacing);
+    border-bottom: 10px solid rgb(230, 236, 240);
+    flex-shrink: 0;
+}
+
+.modal .postFormContainer {
+    border: none;
+    padding: 0;
+    padding-top: var(--spacing);
+}
+
+.modal .post {
+    padding: 0 0 var(--spacing) 0;
 }
 
 .userImageContainer {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 .userImageContainer img {
-  width: 100%;
-  border-radius: 50%;
-  background-color: white;
+    width: 100%;
+    border-radius: 50%;
+    background-color: white;
 }
 
-.textAreaContainer {
-  flex: 1;
-  padding-left: var(--spacing);
+.textareaContainer {
+    flex: 1;
+    padding-left: var(--spacing);
 }
 
-.textAreaContainer textarea {
-  width: 100%;
-  border: none;
-  resize: none;
-  font-size: 19px;
+.textareaContainer textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    font-size: 19px;
 }
 
 #submitPostButton {
-  background-color: var(--warna);
-  color: #fff;
-  border: none;
-  border-radius: 40px;
-  padding: 5px 20px;
-  transition: all 1s ease-in-out;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 7px 15px;
 }
 
 #submitPostButton:disabled {
-  background-color: var(--blueL);
+    background-color: var(--blueLight);
 }
 
 .post {
-  display: flex;
-  flex-direction: column;
-  padding: var(--spacing);
-  cursor: pointer;
-  border-bottom: 1px solid var(--lightGrey);
-  flex-shrink: 0;
-}
-
-.post:hover {
-  background-color: rgba(156, 166, 175, 0.075);
-  transition: all 0.17s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
 }
 
 .mainContentContainer {
-  flex: 1;
-  display: flex;
+    flex: 1;
+    display: flex;
 }
 
 .postContentContainer {
-  padding-left: var(--spacing);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+    padding-left: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .username,
 .date {
-  color: var(--greyText);
+    color: var(--greyText)
 }
 
 .displayName {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .postFooter {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .postFooter .postButtonContainer {
-   flex: 1;
-   display: flex;
-} 
+    flex: 1;
+    display: flex;
+}
 
 .postFooter .postButtonContainer button {
-  padding: 7.2px 11px;
-
+    padding: 2px 5px;
 }
 
 .header a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .header a,
 .header span {
-  padding-right: 5px;
+    padding-right: 5px;
 }
 
 .postButtonContainer button:hover {
-  background-color: #d4edff;
-  border-radius: 50%;
-  color: var(--blueL);
+    background-color: #d4edff;
+    color: var(--blue);
+    border-radius: 50%;
 }
 
-.postButtonContainer.red button.active{
-  color: var(--red);
+.postButtonContainer.red button.active {
+    color: var(--red);
 }
 
-.postButtonContainer.red button:hover{
-  color: var(--red);
-  background-color: var(--redBg);
+.postButtonContainer.red button:hover {
+    color: var(--red);
+    background-color: var(--redBackground)
 }
 
-.postButtonContainer.green button.active{
-  color: var(--green);
+.postButtonContainer.green button.active {
+    color: var(--green);
 }
 
-.postButtonContainer.green button:hover{
-  color: var(--green);
-  background-color: var(--greenBg);
+.postButtonContainer.green button:hover {
+    color: var(--green);
+    background-color: var(--greenBackground)
 }
 
 .postActionContainer {
-  padding-left: 45px;
-  font-size: 13px;
-  color: var(--greyText);
-  font-weight: bold;
-  margin-bottom: 3px;
-}
-
-.postActionContainer span a:hover {
-  text-decoration: underline;
-}
-
-.modal .postFormContainer {
-  border: none;
-  padding: 0;
-  padding-top: var(--spacing);
-}
-
-.modal .post {
-  padding: 0;
-  padding-bottom: var(--spacing);
+    padding-left: 35px;
+    font-size: 13px;
+    color: var(--greyText);
+    margin-bottom: 5px;
 }
 
 .replyFlag {
-  margin-bottom: 5px;
-}
-
-.replyFlag span {
-  color:rgba(91, 112, 131, 0.609);
-  padding: 0;
-  font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .replyFlag a {
     color: var(--blue);
 }
 
-.replyFlag a:hover {
-  text-decoration: underline;
-}
-
 .post.largeFont .postBody,
-.post.largeFont .postFooter{
-  font-size: 23px;
+.post.largeFont .postFooter {
+    font-size: 23px;
 }
 
 .postContentContainer .header {
-  display: flex;
+    display: flex;
 }
 
 .postContentContainer .header .date {
-  flex: 1;
+    flex: 1;
 }
 
-.profileHeaderContainer .coverPhotoContainer {
-  height: 180px;;
-  background-color: var(--warna);
-  position: relative;
+.errorMessage {
+    padding: var(--spacing);
+}
+
+.coverPhotoContainer {
+    height: 180px;
+    background-color: var(--blue);
+    position: relative;
 }
 
 .profileHeaderContainer .userImageContainer {
-  height: 132px;
-  width: 132px;
-  margin-left: var(--spacing);
-  position: absolute;
-  bottom: -66px;
+    width: 132px;
+    height: 132px;
+    margin-left: var(--spacing);
+    position: absolute;
+    bottom: -66px;
 }
 
-.profileHeaderContainer .userImageContainer img{
-  border: 6px solid #fff;
+.profileHeaderContainer .userImageContainer img {
+    border: 4px solid #fff;
 }
 
-
-/* Awal Styling 404 page */
-
-.error-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  margin-top: 50px;
-}
-.error-page h1 {
-  font-size: 30vh;
-  font-weight: bold;
-  position: relative;
-  margin: -8vh 0 0;
-  padding: 0;
-}
-.error-page h1:after {
-  content: attr(data-h1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: transparent;
-  /* webkit only for graceful degradation to IE */
-  background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #f8f6f6, #b98acc, #69a6ce, #9b59b6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400%;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
-  animation: animateTextBackground 10s ease-in-out infinite;
-}
-.error-page h1 + p {
-  color: #d6d6d6;
-  font-size: 8vh;
-  font-weight: bold;
-  line-height: 10vh;
-  max-width: 600px;
-  position: relative;
-}
-.error-page h1 + p:after {
-  content: attr(data-p);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: transparent;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
+.profileHeaderContainer .profileButtonsContainer {
+    text-align: right;
+    padding: var(--spacing);
+    min-height: 66px;
 }
 
-#particles-js {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.profileButton {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 60px;
+    display: inline-block;
+    margin-left: var(--spacing);
 }
 
-@keyframes animateTextBackground {
-  0% {
-    background-position: 0 0;
-  }
-  25% {
-    background-position: 100% 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0 100%;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-@media (max-width: 767px) {
-  .error-page h1 {
-    font-size: 32vw;
-  }
-  .error-page h1 + p {
-    font-size: 8vw;
-    line-height: 10vw;
-    max-width: 70vw;
-  }
-}
-a.back {
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-  background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176);
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 24px;
-  padding: 15px 30px;
-  text-decoration: none;
-  transition: 0.25s all ease-in-out;
-}
-a.back:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+.profileButton:hover {
+    background-color: var(--blueBackground);
 }
 
-/* Akhir Styling 404 page */
+.postContentContainer .replyFlag a:hover {
+    text-decoration: underline;
+}

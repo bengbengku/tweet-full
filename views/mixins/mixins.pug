@@ -2,8 +2,8 @@ mixin createPostForm(userLoggedIn)
     .postFormContainer
         .userImageContainer
             img(src=userLoggedIn.profilePic, alt="User's profile picture")
-        .textAreaContainer
-            textarea#postTextArea(placeholder="Apa yang sedang terjadi? ")
+        .textareaContainer
+            textarea#postTextarea(placeholder="What's happening?")
             .buttonsContainer
                 button#submitPostButton(disabled="") Post
 
@@ -20,12 +20,13 @@ mixin createReplyModal(userLoggedIn)
                     .postFormContainer
                         .userImageContainer
                             img(src=userLoggedIn.profilePic, alt="User's profile picture")
-                        .textAreaContainer
-                            textarea#replyTextArea(placeholder="Your reply ... ")
+                        .textareaContainer
+                            textarea#replyTextarea(placeholder="What's happening?")
                 .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
                     button#submitReplyButton.btn.btn-primary(type='button', disabled="") Reply
 
-mixin createDeleteModal()
+mixin createDeletePostModal()
     #deletePostModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='deletePostModalLabel', aria-hidden='true')
         .modal-dialog(role='document')
             .modal-content
@@ -36,8 +37,9 @@ mixin createDeleteModal()
                 .modal-body
                     p You won't be able to delete this.
                 .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
                     button#deletePostButton.btn.btn-primary(type='button') Delete
 
 mixin createPostModals(userLoggedIn)
     +createReplyModal(userLoggedIn)
-    +createDeleteModal()
+    +createDeletePostModal()
