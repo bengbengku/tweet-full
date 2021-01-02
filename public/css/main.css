@@ -271,6 +271,24 @@ button span {
   flex: 1;
 }
 
+.profileHeaderContainer .coverPhotoContainer {
+  height: 180px;;
+  background-color: var(--warna);
+  position: relative;
+}
+
+.profileHeaderContainer .userImageContainer {
+  height: 132px;
+  width: 132px;
+  margin-left: var(--spacing);
+  position: absolute;
+  bottom: -66px;
+}
+
+.profileHeaderContainer .userImageContainer img{
+  border: 6px solid #fff;
+}
+
 
 /* Awal Styling 404 page */
 
@@ -298,7 +316,7 @@ button span {
   right: 0;
   color: transparent;
   /* webkit only for graceful degradation to IE */
-  background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176, #b98acc, #69a6ce, #9b59b6);
+  background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #f8f6f6, #b98acc, #69a6ce, #9b59b6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 400%;

@@ -8,7 +8,11 @@ block content
                 p(data-p="NOT FOUND") NOT FOUND
         #profileParticle
     else
-        span #{profileUser.firstName}
+        .profileHeaderContainer
+            .coverPhotoContainer
+
+                .userImageContainer
+                    img(src=profileUser.profilePic, alt="user profile image")
         .postContainer
 
         +createPostModals(userLoggedIn)
