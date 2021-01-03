@@ -61,6 +61,10 @@ nav a:hover {
     transition: all 0.17s ease-in-out;
 }
 
+.wrapper > .row {
+    margin: 0;
+}
+
 button {
     background-color: transparent;
     border: none;
