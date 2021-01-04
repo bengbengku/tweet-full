@@ -380,7 +380,7 @@ button span {
     padding: var(--spacing);
     display: flex;
     border-bottom: 1px solid var(--lightGrey);
-
+    align-items: center;
 }
 
 .user .userDetailsContainer {
