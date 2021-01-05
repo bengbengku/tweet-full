@@ -280,6 +280,10 @@ button span {
     margin-left: var(--spacing);
     position: absolute;
     bottom: -66px;
+    /* display, align dan justify menargetkan icon upload foto menjadi ditengah */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profileHeaderContainer .userImageContainer img {
@@ -386,4 +390,15 @@ button span {
 .user .userDetailsContainer {
     flex: 1;
     padding: 0 var(--spacing);
+}
+
+.profilePictureButton {
+    position: absolute;
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.39);
+    display: none;
+}
+
+.userImageContainer:hover .profilePictureButton {
+    display: block;
 }
