@@ -107,6 +107,31 @@ $("#filePhoto").change(function(){
   }
 })
 
+
+$("#ImageUploadButton").click(() => {
+  var canvas = cropper.getCroppedCanvas();
+
+  if(canvas == null) {
+    alert("could not upload image. Please try again!");
+    return;
+  }
+
+  canvas.toBlob((blob) => {
+    var formData = new FormData();
+    formData.append("croppedImage", blob);
+    
+    $.ajax({
+      url: "/api/users/profilePicture",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: () => location.reload()
+    })
+
+  })
+})
+
 $(document).on("click", ".likeButton", (event) => {
   var button = $(event.target);
   var postId = getPostIdFromElement(button);
