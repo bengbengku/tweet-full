@@ -11,7 +11,7 @@
   --redBackground: rgba(226, 34, 94, 0.1);
   --green: rgb(23, 191, 99);
   --greenBackground: rgba(23, 191, 99, 0.1);
-  --colorPin: rgb(172,56,52);
+  --colorPin: rgb(172, 56, 52);
 }
 
 * {
@@ -83,6 +83,12 @@ button span {
   border-right: 1px solid var(--lightGrey);
   display: flex;
   flex-direction: column;
+}
+
+.mainSectionContainer .resultsContainer .user {
+  padding: var(--spacing);
+  display: flex;
+  border-bottom: 1px solid var(--lightGrey);
 }
 
 .mainSectionContainer .postsContainer .noResults {
@@ -269,7 +275,7 @@ button span {
   padding: var(--spacing);
 }
 
-.coverPhotoSection{
+.coverPhotoSection {
   height: 180px;
   background-color: var(--blue);
   position: relative;
@@ -385,7 +391,6 @@ button span {
   padding: var(--spacing);
   display: flex;
   border-bottom: 1px solid var(--lightGrey);
-  align-items: center;
 }
 
 .user .userDetailsContainer {
@@ -393,14 +398,16 @@ button span {
   padding: 0 var(--spacing);
 }
 
-.profilePictureButton, .coverPhotoButton {
+.profilePictureButton,
+.coverPhotoButton {
   position: absolute;
   font-size: 50px;
   color: rgba(0, 0, 0, 0.603);
   display: none;
 }
 
-.userImageContainer:hover .profilePictureButton, .coverPhotoSection:hover .coverPhotoButton {
+.userImageContainer:hover .profilePictureButton,
+.coverPhotoSection:hover .coverPhotoButton {
   display: block;
 }
 
@@ -418,7 +425,8 @@ button span {
   background-position: center;
 }
 
-#imagePreview, #coverPreview {
+#imagePreview,
+#coverPreview {
   display: block;
   max-width: 100%;
   padding: var(--spacing);
@@ -426,7 +434,6 @@ button span {
 }
 
 /* Pembuka Setup maps */
-
 
 .mainSectionContainer .postsContainer #map {
   box-sizing: content-box;

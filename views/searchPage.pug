@@ -1,10 +1,10 @@
 extends layouts/main-layout.pug
 
-block content   
+block content    
 
     .searchBarContainer
         i.fas.fa-search
-        input#searchBox(type="text", name="searchBox", data-search=selectedTab, placeholder="Search for users or post")
+        input#searchBox(type="text", name="searchBox", data-search=selectedTab, placeholder="Search for users or posts")
 
     .tabsContainer
         +createTab("Posts", `/search/posts`, selectedTab != "users")

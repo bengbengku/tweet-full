@@ -57,11 +57,11 @@ mixin createTab(name, href, isSelected)
         span #{name}
 
 mixin createImageUploadModal()
-    #imageUploadModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='ImageUploadModalLabel', aria-hidden='true')
+    #imageUploadModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='imageUploadModalLabel', aria-hidden='true')
         .modal-dialog(role='document')
             .modal-content
                 .modal-header
-                    h5#ImageUploadModalLabel.modal-title Upload a new profile picture
+                    h5#imageUploadModalLabel.modal-title Upload a new profile picture
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                     span(aria-hidden='true') &times;
                 .modal-body
@@ -71,7 +71,7 @@ mixin createImageUploadModal()
                         img#imagePreview
                 .modal-footer
                     button.btn.btn-secondary(type='button', data-dismiss='modal') Cancel
-                    button#ImageUploadButton.btn.btn-primary(type='button') Save
+                    button#imageUploadButton.btn.btn-primary(type='button') Save
 
 mixin createCoverPhotoUploadModal()
     #coverPhotoUploadModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='coverPhotoModalLabel', aria-hidden='true')
@@ -82,7 +82,7 @@ mixin createCoverPhotoUploadModal()
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                     span(aria-hidden='true') &times;
                 .modal-body
-                    input#coverPhoto(type="file", name="coverPhoto")
+                    input#coverPhoto(type="file", name="filePhoto")
 
                     .imagePreviewContainer
                         img#coverPreview
@@ -95,7 +95,7 @@ mixin createPinnedPostModal()
         .modal-dialog(role='document')
             .modal-content
                 .modal-header
-                    h5#confirmPinModalLabel.modal-title Pin the post?
+                    h5#confirmPinModalLabel.modal-title Pin this post?
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                     span(aria-hidden='true') &times;
                 .modal-body
@@ -116,4 +116,4 @@ mixin createUnpinPostModal()
                     p This post will be unpinned.
                 .modal-footer
                     button.btn.btn-secondary(type='button', data-dismiss='modal') Cancel
-                    button#unpinPostButton.btn.btn-primary(type='button') Unpin
+                    button#unpinPostButton.btn.btn-primary(type='button') Pin
