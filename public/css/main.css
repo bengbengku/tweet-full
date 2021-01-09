@@ -11,6 +11,7 @@
   --redBackground: rgba(226, 34, 94, 0.1);
   --green: rgb(23, 191, 99);
   --greenBackground: rgba(23, 191, 99, 0.1);
+  --colorPin: rgb(172,56,52);
 }
 
 * {
@@ -431,4 +432,8 @@ button span {
   box-sizing: content-box;
   border: 0.5rem solid white;
   height: 25rem;
+}
+
+.pinButton.active {
+  color: var(--colorPin);
 }
