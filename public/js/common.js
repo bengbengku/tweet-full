@@ -1,9 +1,10 @@
 // Globals
 var cropper;
+var timer;
 
 $("#postTextarea, #replyTextarea").keyup(event => {
     var textbox = $(event.target);
-    var value = textbox.val().trim();
+    var value = textbox.val().trim(); 
 
     var isModal = textbox.parents(".modal").length == 1;
     
@@ -179,6 +180,27 @@ $("#coverPhoto").change(function(){
         reader.readAsDataURL(this.files[0]);
     }
 })
+
+$("#userSearchTextbox").keydown((event) => {
+  clearTimeout(timer);
+  var textbox = $(event.target);
+  var value = textbox.val();
+
+  if(value == "" && event.keycode == 8) {
+      //remove user dari seleksi
+      return;
+  }
+
+  timer = setTimeout(() => {
+    value = textbox.val().trim();
+
+    if (value == "") {
+      $(".resultsContainer").html("");
+    } else {
+      searchUsers(value);
+    }
+  }, 1000);
+});
 
 $("#imageUploadButton").click(() => {
     var canvas = cropper.getCroppedCanvas();
@@ -545,4 +567,8 @@ function createUserHtml(userData, showFollowButton) {
                 </div>
                 ${followButton}
             </div>`;
+}
+
+function searchUsers(searchTerm) {
+    console.log("Haii");
 }
