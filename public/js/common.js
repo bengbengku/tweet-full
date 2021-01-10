@@ -608,7 +608,7 @@ function userSelected(user) {
 
 function updateSelectedUsersHtml() {
     
-    var elements = [] ;
+    var elements = [];
     selectedUsers.forEach((user) => {
         var name = user.firstName + " " + user.lastName;
         var userElement = $(`<span class='selectedUser'>${name}</span>`);
