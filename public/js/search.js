@@ -24,7 +24,6 @@ function search(searchTerm, searchType) {
     $.get(url, { search: searchTerm }, (results) => {
         
 
-
         if(searchType == "users") {
             outputUsers(results, $(".resultsContainer"));
         }
