@@ -499,6 +499,12 @@ button span {
   height: 25rem;
 }
 
+.mainSectionContainer .titleContainer {
+  position: sticky !important;
+  top: 0;
+  background-color: #15202B;
+}
+
 .pinButton.active {
   color: #F45D22;
 }
