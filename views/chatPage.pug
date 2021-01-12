@@ -7,6 +7,18 @@ block content
     else
         script.
             var chatId = '!{chat._id}';
+        
+        .chatPageContainer
+            .chatTitleBarContainer
+                span#chatName This is the chat
+
+            .mainContentContainer
+                .chatContainer
+
+                    .footer
+                        textarea(name="messageInput", placeholder="Start a new message ...")
+                        button.sendMessageButton
+                            i.fas.fa-paper-plane
 
 block scripts
     script(src="/js/chatPage.js")
