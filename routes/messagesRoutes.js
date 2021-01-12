@@ -4,6 +4,8 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const User = require("../schemas/UserSchema");
+const Chat = require("../schemas/ChatSchema");
+
 
 router.get("/", (req, res, next) => {
  
@@ -25,11 +27,25 @@ router.get("/new", (req, res, next) => {
 
 });
 
-router.get("/:chatId", (req, res, next) => {
+router.get("/:chatId", async (req, res, next) => {
+
+  var userId = req.session.user._id;
+  var chatId = req.params.chatId;
+
+  var chat = await Chat.findOne({ _id: chatId, users: { $elemMatch: { $eq: userId } } })
+  .populate("users");
+
+  if(chat == null) {
+    //check jika chat id betul berisi user id
+
+
+  }
+
   res.status(200).render("chatPage", {
     pageTitle: "Chat",
     userLoggedIn: req.session.user,
     userLoggedInJs: JSON.stringify(req.session.user),
+    chat: chat,
   });
 });
 
