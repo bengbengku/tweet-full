@@ -14,12 +14,17 @@
   --colorPin: rgb(172, 56, 52);
 }
 
+body {
+  background-color: #15202B;
+}
+
 * {
   outline: none !important;
+  /* background-color: #15202B; */
 }
 
 a {
-  color: inherit;
+  color: #fff;
 }
 
 a:hover {
@@ -31,6 +36,7 @@ h1 {
   font-size: 19px;
   font-weight: 800;
   margin: 0;
+  color: #fff;
 }
 
 nav {
@@ -38,6 +44,8 @@ nav {
   flex-direction: column;
   align-items: flex-end;
   height: 100%;
+  position: sticky !important;
+  top: 0;
 }
 
 nav a {
@@ -48,16 +56,21 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #212529;
+  color: #F45D22;
 }
 
 nav a.blue {
-  color: var(--blue);
+  color: #fff;
+}
+
+nav a.blue:hover {
+  color: #fff;
+  background-color: rgba(155,209,249, 0.1);
 }
 
 nav a:hover {
-  background-color: var(--buttonHoverBg);
-  color: var(--blue);
+  background-color: rgba(244,93,34, 0.1);
+  color: #F45D22;
   border-radius: 50%;
   transition: all 0.17s ease-in-out;
 }
@@ -79,8 +92,8 @@ button span {
 
 .mainSectionContainer {
   padding: 0;
-  border-left: 1px solid var(--lightGrey);
-  border-right: 1px solid var(--lightGrey);
+  border-left: 1px solid rgba(56,68,77, 0.2);
+  border-right: 1px solid rgba(56,68,77, 0.2);
   display: flex;
   flex-direction: column;
 }
@@ -88,7 +101,7 @@ button span {
 .mainSectionContainer .resultsContainer .user {
   padding: var(--spacing);
   display: flex;
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 1px solid rgba(56,68,77, 0.2);
 }
 
 .mainSectionContainer .postsContainer .noResults {
@@ -106,8 +119,19 @@ button span {
   padding: 0 var(--spacing);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 2px solid rgba(56,68,77, 0.2);
   flex-shrink: 0;
+}
+
+.titleContainer a{
+  color: #F45D22;
+}
+
+.titleContainer a:hover{
+  color: #fff;
+  background-color: rgba(155,209,249, 0.1);
+  border-radius: 50%;
+  padding: 6px 10px;
 }
 
 .titleContainer h1 {
@@ -117,18 +141,26 @@ button span {
 .postFormContainer {
   display: flex;
   padding: var(--spacing);
-  border-bottom: 10px solid rgb(230, 236, 240);
+  border-bottom: 10px solid rgba(56,68,77, 0.32);
   flex-shrink: 0;
+  position: sticky !important;
+  top: 0;
+  background-color: #15202B;
 }
 
 .modal .postFormContainer {
   border: none;
   padding: 0;
   padding-top: var(--spacing);
+  background-color: #f89e7a;
 }
 
 .modal .post {
   padding: 0 0 var(--spacing) 0;
+}
+
+.modal .post:hover {
+  background-color: unset !important;
 }
 
 .userImageContainer {
@@ -150,20 +182,23 @@ button span {
 .textareaContainer textarea {
   width: 100%;
   border: none;
+  background-color: #15202B;
   resize: none;
   font-size: 19px;
+  color: #fff;
 }
 
 #submitPostButton {
-  background-color: var(--blue);
+  background-color: #F45D22;
   color: white;
+  font-weight: bold;
   border: none;
   border-radius: 40px;
-  padding: 7px 15px;
+  padding: 7px 25px;
 }
 
 #submitPostButton:disabled {
-  background-color: var(--blueLight);
+  background-color: #843E27;
 }
 
 .post {
@@ -171,8 +206,12 @@ button span {
   flex-direction: column;
   padding: var(--spacing);
   cursor: pointer;
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 1px solid rgba(56,68,77, 0.2);
   flex-shrink: 0;
+}
+
+.post:hover {
+  background-color:rgba(32,44,54, 0.2);
 }
 
 .mainContentContainer {
@@ -194,6 +233,7 @@ button span {
 
 .displayName {
   font-weight: bold;
+  color: #fff;
 }
 
 .postFooter {
@@ -208,10 +248,12 @@ button span {
 
 .postFooter .postButtonContainer button {
   padding: 2px 5px;
+  color: #566470;
 }
 
 .header a:hover {
   text-decoration: underline;
+  color: #fff;
 }
 
 .header a,
@@ -252,15 +294,21 @@ button span {
 
 .replyFlag {
   margin-bottom: 5px;
+  color: var(--greyText);
 }
 
 .replyFlag a {
-  color: var(--blue);
+  color: #F45D22;
 }
 
 .post.largeFont .postBody,
 .post.largeFont .postFooter {
   font-size: 23px;
+}
+
+.postBody span {
+  color: #fff;
+  font-weight: lighter;
 }
 
 .postContentContainer .header {
@@ -305,8 +353,8 @@ button span {
 
 .profileButton,
 .followButton {
-  border: 1px solid var(--blue);
-  color: var(--blue);
+  border: 2px solid #F45D22;
+  color:#F45D22;
   font-weight: bold;
   padding: 5px 15px;
   border-radius: 60px;
@@ -314,18 +362,23 @@ button span {
   margin-left: var(--spacing);
 }
 
-.profileButton:hover,
 .followButton:hover {
-  background-color: var(--blueBackground);
+  background-color: rgba(244, 93, 34, 0.1);
 }
+
+.profileButton:hover {
+  color: white;
+  background-color: rgba(244, 93, 34, 0.1);
+}
+
 
 .postContentContainer .replyFlag a:hover {
   text-decoration: underline;
 }
 
 .followButton.following {
-  background-color: var(--blue);
-  color: #fff;
+  border: 2px solid #F45D22;
+  color: #F45D22;
 }
 
 .profileHeaderContainer .userDetailsContainer {
@@ -349,11 +402,12 @@ button span {
 
 .followersContainer a:hover {
   border-bottom: 1px solid #000;
+  color: var(--greyText);
 }
 
 .tabsContainer {
   display: flex;
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 1px solid rgba(56,68,77, 0.2);
   flex-shrink: 0;
 }
 
@@ -368,18 +422,22 @@ button span {
 }
 
 .tab:hover {
-  color: var(--blue);
-  background-color: var(--blueBackground);
+  color: #F45B24;
+  background-color: rgba(244, 93, 34, 0.1);
   transition: all 0.27s ease-in-out;
 }
 
 .tab.active {
-  color: var(--blue);
-  border-bottom: 4px solid var(--blue);
+  color: #F45B24;
+  border-bottom: 4px solid #F45D22;
 }
 
 .noResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: var(--spacing);
+  color: #fff;
 }
 
 .resultContainer {
@@ -390,7 +448,7 @@ button span {
 .resultContainer .user {
   padding: var(--spacing);
   display: flex;
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 2px solid rgba(56,68,77, 0.2);
 }
 
 .user .userDetailsContainer {
@@ -442,22 +500,25 @@ button span {
 }
 
 .pinButton.active {
-  color: var(--colorPin);
+  color: #F45D22;
+}
+
+.pinButton{
+  color: rgba(244,93,34, 0.2);
 }
 
 .pinnedPostText {
   font-size: 12px;
-  color: var(--greyText);
-}
-
-.pinnedPostContainer {
-  border-bottom: 8px solid rgba(204, 204, 204, 0.34);
+  color: #F45D22;
 }
 
 .searchBarContainer {
   position: relative;
   color: var(--greyText);
   padding: 10px var(--spacing);
+  position: sticky !important;
+  top: 0;
+  background-color: #15202B;
 }
 
 .searchBarContainer i {
@@ -471,7 +532,7 @@ button span {
   width: 100%;
   padding: 5px 15px 5px 40px;
   border-radius: 50px;
-  background-color: var(--lightGrey);
+  background-color: #253341;
   border: none;
   color: var(--greyText);
 }
@@ -483,7 +544,7 @@ button span {
 }
 
 .chatTitleBar {
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 1px solid rgba(56,68,77, 0.2);
   display: flex;
   align-items: center;
   min-height: 60px;
@@ -492,6 +553,8 @@ button span {
 
 .chatTitleBar label {
   margin: 0 10px 0 0;
+  color: #fff;
+  font-weight: 400;
 }
 
 #userSearchTextbox {
@@ -499,20 +562,27 @@ button span {
   flex: 1;
   font-weight: 200px;
   min-width: 350px;
+  background-color: #15202B;
+  color: #fff;
 }
 
 #createChatButton {
-  border: none;
-  background-color: var(--blue);
+  border: 2px solid #F45D22;
   color: #fff;
   padding: 7px 20px;
+  font-weight: bold;
   margin: 10px auto;
   border-radius: 40px;
 }
 
+#createChatButton:hover {
+   background-color: rgba(244, 93, 34, 0.1);
+}
+
 #createChatButton:disabled {
-  background-color: var(--lightGrey);
+  background-color: rgba(230, 236, 240, 0.1);
   color: var(--greyText);
+  border: 2px solid rgba(230, 236, 240, 0.06);
 }
 
 .selectedUser {
@@ -533,8 +603,10 @@ button span {
   border-bottom: 1px solid var(--lightGrey);
 }
 
+
 .resultListItem:hover {
-  background-color: #f2f2f2;
+  background-color:rgba(32,44,54, 0.2);
+  color: #fff;
 }
 
 .resultsDetailsContainer {
@@ -587,3 +659,23 @@ button span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+.modal-body {
+  background-color: rgba(244, 93, 34, 0.6);
+}
+
+.modal-header {
+  background-color: #15202B;
+  color: #fff;
+}
+
+.modal-footer {
+  background-color: #15202B;
+  color: #fff;
+}
+
+#replyTextarea{
+  background-color: #f89e7a;
+}
+
