@@ -321,6 +321,10 @@ button span {
 
 .errorMessage {
   padding: var(--spacing);
+  color: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .coverPhotoSection {
