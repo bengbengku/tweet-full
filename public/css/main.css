@@ -747,6 +747,11 @@ button span {
   color: #fff;
 }
 
+.chatContainer .footer textarea::-webkit-scrollbar {
+    width: 0px;  /* Hapus scrollbar space */
+    background: transparent;  /* Membuat visibility scrollbar menjadi transparent; */
+}
+
 .chatContainer .footer button {
   background-color: transparent;
   color: var(--orange);

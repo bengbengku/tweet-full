@@ -17,7 +17,7 @@ block content
                 .chatContainer
                     .chatMessages
                     .footer
-                        textarea(name="messageInput", placeholder="Start a new message ...")
+                        textarea.inputTextbox(name="messageInput", placeholder="Start a new message ...")
                         button.sendMessageButton
                             i.fas.fa-paper-plane
         +createChatNameModal(chat)
