@@ -13,6 +13,7 @@
   --greenBackground: rgba(23, 191, 99, 0.1);
   --colorPin: rgb(172, 56, 52);
   --orange:  #F45D22;
+  --bg: #15202B;
 }
 
 html, body {
@@ -758,4 +759,19 @@ button span {
   flex-direction: column;
   overflow-y: auto;
   padding: var(--spacing);
+}
+
+.chatImagesContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.chatImagesContainer img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  margin-left: -10px;
 }
