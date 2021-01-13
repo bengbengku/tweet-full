@@ -122,8 +122,22 @@ mixin createChatImage(chatData, userLoggedIn)
     if(!chatData)
         return
     
+    - var i = 0
+    - var maxImagesToShow = 2
+    - var remainingUsers = chatData.users.length - maxImagesToShow
+    - remainingUsers-- // Menghapus 1 dari gambar profile kita. gambar profile kita tidak ditampilkan
+
     .chatImagesContainer
+        if remainingUsers > 0
+            .userCount
+                span +#{remainingUsers}
 
         each user in chatData.users
+            if chatData.users.length != 1 && user._id == userLoggedIn._id
+                - continue
+            else if i >= maxImagesToShow
+                - break
+
             img(src=user.profilePic, alt="User's profile picture", title=user.firstName)
+            - i++ 
 
