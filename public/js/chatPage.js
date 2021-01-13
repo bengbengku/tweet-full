@@ -3,7 +3,7 @@ $("#chatNameButton").click(() => {
     
     
     $.ajax({
-        url: "/api/chat/" + chatId,
+        url: "/api/chats/" + chatId,
         type: "PUT",
         data: { chatName: name },
         success: (data, status, xhr) => {
