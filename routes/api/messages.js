@@ -22,7 +22,9 @@ router.post("/", async (req, res, next) => {
   }
 
   Message.create(newMesage)
-  .then((results) => {
+  .then(async (results) => {
+    results = await results.populate("sender").execPopulate();
+    results = await results.populate("chat").execPopulate();
     res.status(201).send(results);
   })
   .catch((error) => {

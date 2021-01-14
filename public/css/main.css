@@ -806,3 +806,37 @@ button span {
   color: #fff;
   font-weight: 700;
 }
+
+.chatMessages .message {
+  padding-bottom: 2px;
+  list-style: none;
+  color: var(--greyText);
+  font-weight: 400;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  -webkit-flex: 0;
+}
+
+.chatMessages .message .messageBody {
+  background-color: rgba(155,209,249, 0.06);
+  padding: 6px 12px;
+  border-radius: 18px;
+  font-size: 14px;
+}
+
+.chatMessages .message .messageContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 55%;
+}
+
+.chatMessages .message.mine {
+  flex-direction: row-reverse;
+}
+
+.chatMessages .message.mine .messageBody { 
+  background-color: var(--orange);
+  color: #fff;
+  font-weight: 400;
+}
