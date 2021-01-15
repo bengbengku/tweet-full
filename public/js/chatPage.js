@@ -4,7 +4,17 @@ $(document).ready(() => {
   });
 
   $.get(`/api/chats/${chatId}/messages`, (data) => {
-    console.log(data);
+    
+    var messages = [];
+
+    data.forEach((message) => {
+      var html = createMessageHtml(message);
+      messages.push(html);
+    })
+
+    var messagesHtml = messages.join("");
+    addMessagesHtmlToPage(messagesHtml);
+
   });
 
 });
@@ -37,6 +47,10 @@ $(".inputTextbox").keydown((event) => {
   }
 });
 
+function addMessagesHtmlToPage(html) {
+  $(".chatMessages").append(html);
+}
+
 function messageSubmitted() {
   var content = $(".inputTextbox").val().trim();
 
@@ -67,7 +81,7 @@ function addChatMessageHtml(message) {
 
   var messageDiv = createMessageHtml(message);
 
-  $(".chatMessages").append(messageDiv);
+  addMessagesHtmlToPage(messageDiv)
 
 
 }
