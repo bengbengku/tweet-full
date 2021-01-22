@@ -18,6 +18,8 @@ $(document).ready(() => {
     var messagesHtml = messages.join("");
     addMessagesHtmlToPage(messagesHtml);
 
+    scrollToBottom(false);
+
   });
 
 });
@@ -85,7 +87,7 @@ function addChatMessageHtml(message) {
   var messageDiv = createMessageHtml(message, null, "");
 
   addMessagesHtmlToPage(messageDiv)
-
+  scrollToBottom(true);
 
 }
 
@@ -143,4 +145,17 @@ function createMessageHtml(message, nextMessage, lastSenderId) {
   `;
 
 
+}
+
+
+function scrollToBottom(animated) {
+  var container = $(".chatMessages");
+  var scrollHeight = container[0].scrollHeight;
+
+  if(animated) {
+    container.animate({ scrollTop: scrollHeight }, "slow");
+  }
+  else {
+    container.scrollTop(scrollHeight);
+  }
 }
