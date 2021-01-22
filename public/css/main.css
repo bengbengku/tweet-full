@@ -230,6 +230,7 @@ button span {
 .mainContentContainer {
   flex: 1;
   display: flex;
+  overflow-y: hidden;
 }
 
 .postContentContainer {
@@ -565,6 +566,7 @@ button span {
   flex-direction: column;
   min-height: 0;
   flex: 1;
+  flex-basis: 0;
 }
 
 .chatTitleBar {
