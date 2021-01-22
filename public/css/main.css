@@ -831,6 +831,14 @@ button span {
   max-width: 55%;
 }
 
+.chatMessages .message.mine .messageContainer {  
+  align-items: flex-end;
+}
+
+.chatMessages .message.theirs .messageContainer {  
+  align-items: flex-start;
+}
+
 .chatMessages .message.mine {
   flex-direction: row-reverse;
 }
@@ -873,4 +881,8 @@ button span {
 
 .chatMessages .message.theirs.last:not(.first) .messageBody {
   border-top-left-radius: 2px;
+}
+
+.senderName {
+  color: var(--greyText);
 }
