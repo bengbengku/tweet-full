@@ -20,6 +20,9 @@ $(document).ready(() => {
 
     scrollToBottom(false);
 
+    $(".loadingSpinnerContainer").remove();
+    $(".chatContainer").css("visibility", "visible");
+
   });
 
 });
