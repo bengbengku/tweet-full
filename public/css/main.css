@@ -23,6 +23,10 @@ html, body {
   font-weight: 300;
 }
 
+ul {
+  margin: 0;
+}
+
 * {
   outline: none !important;
   /* background-color: #15202B; */
@@ -817,7 +821,6 @@ button span {
   display: flex;
   align-items: flex-end;
   flex-shrink: 0;
-  -webkit-flex: 0;
 }
 
 .chatMessages .message .messageBody {
